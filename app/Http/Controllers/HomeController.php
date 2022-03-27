@@ -46,7 +46,7 @@ class HomeController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://api.independentreserve.com/Public/GetOrderBook?primaryCurrencyCode=usdt&secondaryCurrencyCode=aud',
+            CURLOPT_URL => 'https://api.independentreserve.com/Public/GetOrderBook?primaryCurrencyCode=usdc&secondaryCurrencyCode=aud',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -67,7 +67,7 @@ class HomeController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://api.binance.com/api/v3/depth?symbol=AUDUSDT',
+            CURLOPT_URL => 'https://api.binance.com/api/v3/depth?symbol=AUDUSDC',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -91,7 +91,7 @@ class HomeController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://data.exchange.coinjar.com/products/USDTAUD/book?level=2',
+            CURLOPT_URL => 'https://data.exchange.coinjar.com/products/USDCAUD/book?level=2',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -115,7 +115,7 @@ class HomeController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://api.btcmarkets.net/v3/markets/USDT-AUD/orderbook',
+            CURLOPT_URL => 'https://api.btcmarkets.net/v3/markets/USDC-AUD/orderbook',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -226,7 +226,7 @@ class HomeController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://api.independentreserve.com/Public/GetOrderBook?primaryCurrencyCode=usdt&secondaryCurrencyCode=aud',
+            CURLOPT_URL => 'https://api.independentreserve.com/Public/GetOrderBook?primaryCurrencyCode=usdc&secondaryCurrencyCode=aud',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -247,7 +247,7 @@ class HomeController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://api.independentreserve.com/Public/GetRecentTrades?primaryCurrencyCode=usdt&secondaryCurrencyCode=aud&numberOfRecentTradesToRetrieve=1',
+            CURLOPT_URL => 'https://api.independentreserve.com/Public/GetRecentTrades?primaryCurrencyCode=usdc&secondaryCurrencyCode=aud&numberOfRecentTradesToRetrieve=1',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -273,7 +273,7 @@ class HomeController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://api.binance.com/api/v3/depth?symbol=AUDUSDT&limit=10',
+            CURLOPT_URL => 'https://api.binance.com/api/v3/depth?symbol=AUDUSDC&limit=10',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -296,7 +296,7 @@ class HomeController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://api.binance.com/api/v3/trades?symbol=AUDUSDT&limit=1',
+            CURLOPT_URL => 'https://api.binance.com/api/v3/trades?symbol=AUDUSDC&limit=1',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -322,7 +322,7 @@ class HomeController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://data.exchange.coinjar.com/products/USDTAUD/book?level=2',
+            CURLOPT_URL => 'https://data.exchange.coinjar.com/products/USDCAUD/book?level=2',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -345,7 +345,7 @@ class HomeController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://data.exchange.coinjar.com/products/USDTAUD/trades?limit=1',
+            CURLOPT_URL => 'https://data.exchange.coinjar.com/products/USDCAUD/trades?limit=1',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -370,7 +370,7 @@ class HomeController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://api.btcmarkets.net/v3/markets/USDT-AUD/orderbook',
+            CURLOPT_URL => 'https://api.btcmarkets.net/v3/markets/USDC-AUD/orderbook',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -394,7 +394,7 @@ class HomeController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://api.btcmarkets.net/v3/markets/USDT-AUD/trades?limit=1',
+            CURLOPT_URL => 'https://api.btcmarkets.net/v3/markets/USDC-AUD/trades?limit=1',
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
