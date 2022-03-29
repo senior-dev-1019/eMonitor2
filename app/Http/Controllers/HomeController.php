@@ -43,10 +43,16 @@ class HomeController extends Controller
 
         $exchange = Exchange::find(auth()->user()->id);
         // https://www.independentreserve.com/ BTC/AUD
+        $proxyauth = 'user:pass';
+        $proxy = 'ip';
+        $proxyPort = 'port';
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
             CURLOPT_URL => 'https://api.independentreserve.com/Public/GetOrderBook?primaryCurrencyCode=usdc&secondaryCurrencyCode=aud',
+            CURLOPT_PROXY => $proxy,
+            CURLOPT_PROXYPORT => $proxyPort,
+            CURLOPT_PROXYUSERPWD => $proxyauth, 
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -68,6 +74,9 @@ class HomeController extends Controller
 
         curl_setopt_array($curl, array(
             CURLOPT_URL => 'https://api.binance.com/api/v3/depth?symbol=AUDUSDC',
+            CURLOPT_PROXY => $proxy,
+            CURLOPT_PROXYPORT => $proxyPort,
+            CURLOPT_PROXYUSERPWD => $proxyauth, 
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -92,6 +101,9 @@ class HomeController extends Controller
 
         curl_setopt_array($curl, array(
             CURLOPT_URL => 'https://data.exchange.coinjar.com/products/USDCAUD/book?level=2',
+            CURLOPT_PROXY => $proxy,
+            CURLOPT_PROXYPORT => $proxyPort,
+            CURLOPT_PROXYUSERPWD => $proxyauth, 
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -141,7 +153,10 @@ class HomeController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://api.kraken.com/0/public/Depth?pair=xbtaud&count=10',
+            CURLOPT_URL => 'https://api.kraken.com/0/public/Depth?pair=usdcaud&count=10',
+            CURLOPT_PROXY => $proxy,
+            CURLOPT_PROXYPORT => $proxyPort,
+            CURLOPT_PROXYUSERPWD => $proxyauth, 
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -158,8 +173,8 @@ class HomeController extends Controller
 
         curl_close($curl);
         $response = json_decode($response, true);
-        $exchange5_buyer = array_slice($response['result']['XBTAUD']['bids'], 0, 10);
-        $exchange5_seller = array_slice($response['result']['XBTAUD']['asks'], 0, 10);
+        $exchange5_buyer = array_slice($response['result']['USDCAUD']['bids'], 0, 10);
+        $exchange5_seller = array_slice($response['result']['USDCAUD']['asks'], 0, 10);
         $min = $exchange1_buyer[0]['Price'];
         $max = 0;
         for ($i = 0; $i < 10; $i++) {
@@ -223,10 +238,16 @@ class HomeController extends Controller
         $exchange = Exchange::find(auth()->user()->id);
         $lastprice = array();
         // https://www.independentreserve.com/ BTC/AUD
+        $proxyauth = 'user:pass';
+        $proxy = 'ip';
+        $proxyPort = 'port';
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
             CURLOPT_URL => 'https://api.independentreserve.com/Public/GetOrderBook?primaryCurrencyCode=usdc&secondaryCurrencyCode=aud',
+            CURLOPT_PROXY => $proxy,
+            CURLOPT_PROXYPORT => $proxyPort,
+            CURLOPT_PROXYUSERPWD => $proxyauth, 
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -248,6 +269,9 @@ class HomeController extends Controller
 
         curl_setopt_array($curl, array(
             CURLOPT_URL => 'https://api.independentreserve.com/Public/GetRecentTrades?primaryCurrencyCode=usdc&secondaryCurrencyCode=aud&numberOfRecentTradesToRetrieve=1',
+            CURLOPT_PROXY => $proxy,
+            CURLOPT_PROXYPORT => $proxyPort,
+            CURLOPT_PROXYUSERPWD => $proxyauth, 
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -274,6 +298,9 @@ class HomeController extends Controller
 
         curl_setopt_array($curl, array(
             CURLOPT_URL => 'https://api.binance.com/api/v3/depth?symbol=AUDUSDC&limit=10',
+            CURLOPT_PROXY => $proxy,
+            CURLOPT_PROXYPORT => $proxyPort,
+            CURLOPT_PROXYUSERPWD => $proxyauth, 
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -297,6 +324,9 @@ class HomeController extends Controller
 
         curl_setopt_array($curl, array(
             CURLOPT_URL => 'https://api.binance.com/api/v3/trades?symbol=AUDUSDC&limit=1',
+            CURLOPT_PROXY => $proxy,
+            CURLOPT_PROXYPORT => $proxyPort,
+            CURLOPT_PROXYUSERPWD => $proxyauth, 
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -323,6 +353,9 @@ class HomeController extends Controller
 
         curl_setopt_array($curl, array(
             CURLOPT_URL => 'https://data.exchange.coinjar.com/products/USDCAUD/book?level=2',
+            CURLOPT_PROXY => $proxy,
+            CURLOPT_PROXYPORT => $proxyPort,
+            CURLOPT_PROXYUSERPWD => $proxyauth, 
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -346,6 +379,9 @@ class HomeController extends Controller
 
         curl_setopt_array($curl, array(
             CURLOPT_URL => 'https://data.exchange.coinjar.com/products/USDCAUD/trades?limit=1',
+            CURLOPT_PROXY => $proxy,
+            CURLOPT_PROXYPORT => $proxyPort,
+            CURLOPT_PROXYUSERPWD => $proxyauth, 
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -371,6 +407,9 @@ class HomeController extends Controller
 
         curl_setopt_array($curl, array(
             CURLOPT_URL => 'https://api.btcmarkets.net/v3/markets/USDC-AUD/orderbook',
+            CURLOPT_PROXY => $proxy,
+            CURLOPT_PROXYPORT => $proxyPort,
+            CURLOPT_PROXYUSERPWD => $proxyauth, 
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -395,6 +434,9 @@ class HomeController extends Controller
 
         curl_setopt_array($curl, array(
             CURLOPT_URL => 'https://api.btcmarkets.net/v3/markets/USDC-AUD/trades?limit=1',
+            CURLOPT_PROXY => $proxy,
+            CURLOPT_PROXYPORT => $proxyPort,
+            CURLOPT_PROXYUSERPWD => $proxyauth, 
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -422,7 +464,10 @@ class HomeController extends Controller
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://api.kraken.com/0/public/Depth?pair=xbtaud&count=10',
+            CURLOPT_URL => 'https://api.kraken.com/0/public/Depth?pair=usdcaud&count=10',
+            CURLOPT_PROXY => $proxy,
+            CURLOPT_PROXYPORT => $proxyPort,
+            CURLOPT_PROXYUSERPWD => $proxyauth, 
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -439,13 +484,16 @@ class HomeController extends Controller
 
         curl_close($curl);
         $response = json_decode($response, true);
-        $exchange5_buyer = array_slice($response['result']['XBTAUD']['bids'], 0, 10);
-        $exchange5_seller = array_slice($response['result']['XBTAUD']['asks'], 0, 10);
+        $exchange5_buyer = array_slice($response['result']['USDCAUD']['bids'], 0, 10);
+        $exchange5_seller = array_slice($response['result']['USDCAUD']['asks'], 0, 10);
 
         $curl = curl_init();
 
         curl_setopt_array($curl, array(
-            CURLOPT_URL => 'https://api.kraken.com/0/public/Trades?pair=BTCAUD',
+            CURLOPT_URL => 'https://api.kraken.com/0/public/Trades?pair=USDCAUD',
+            CURLOPT_PROXY => $proxy,
+            CURLOPT_PROXYPORT => $proxyPort,
+            CURLOPT_PROXYUSERPWD => $proxyauth, 
             CURLOPT_RETURNTRANSFER => true,
             CURLOPT_ENCODING => '',
             CURLOPT_MAXREDIRS => 10,
@@ -508,7 +556,6 @@ class HomeController extends Controller
         // alert setting info
 
         $alert = ArbSetting::find(1);
-         
 
         $exchange = Exchange::find(auth()->user()->id);
         $sound = Sound::find(auth()->user()->id);
@@ -618,7 +665,6 @@ class HomeController extends Controller
                 break;
             }
         }
-
         if ($exchange->exchange1 == 1) {
             $min_avt = $avt1;
             $min_index = 1;
